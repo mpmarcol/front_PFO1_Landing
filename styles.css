@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap');
+
 /* body {
     /* parallax */
     background-image: url('media/fondo.jpg');
@@ -46,11 +48,11 @@ h1, h2, h3 {
 header {
     background-color: var(--color-dorado);
     color: white;
-    padding: 1.5rem 5%;
-    display: flex; /* Activamos Flexbox */
-    justify-content: space-between; /* Empuja el logo a la izquierda y el menú a la derecha */
-    align-items: center; /* Centra todo verticalmente */
-    position: sticky; /* Opcional: hace que el menú te persiga al bajar */
+    padding: 0.5rem 5%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
     top: 0;
     z-index: 100;
 }
@@ -65,8 +67,18 @@ header a {
     transition: color 0.3s ease; /* Transición suave exigida por PFO1 */
 }
 
+header .logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
 header a:hover {
-    color: var(--color-texto); /* Cambia al pasar el mouse */
+    color: var(--color-dorado); 
+}
+
+header a:hover {
+    color: var(--color-texto);
 }
 
 /* FOOTER */
@@ -134,13 +146,69 @@ footer a {
     transform: scale(1.05); 
 }
 
-/* === */
-
 /* =========================================
-   IDENTIDAD DE COLOR POR SECCIÓN
+   1. SECCIÓN HERO (VIDEO Y TEXTO FLOTANTE)
 ========================================= */
 
-/* ARDUINO: Azul (Color Primario) */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 596px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    padding-top: 50px;
+    overflow: hidden;
+    color: white;
+}
+
+.video-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+.hero-texto-izq {
+    padding-left: 50px;
+    z-index: 1;
+}
+.hero-texto-der {
+    padding-right: 50px;
+    text-align: right;
+    z-index: 1;
+}
+.hero-texto-izq h1,
+.hero-texto-der h2 {
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    line-height: 1.1;
+}
+.hero-texto-izq h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.hero-texto-der h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--color-dorado);
+}
+
+/* ARDUINO: Azul */
 #arduino {
     border-top: 5px solid #0056b3;
     background-color: rgba(0, 86, 179, 0.03); /* Un fondo azul muy sutil */
@@ -149,7 +217,7 @@ footer a {
     color: #0056b3; 
 }
 
-/* ROBÓTICA: Rojo (Color Primario) */
+/* ROBÓTICA: Rojo */
 #robotica {
     border-top: 5px solid #c0392b;
     background-color: rgba(192, 57, 43, 0.03); /* Un fondo rojo muy sutil */
@@ -158,7 +226,7 @@ footer a {
     color: #c0392b;
 }
 
-/* IMPRESIÓN 3D: Verde (Color Secundario) */
+/* IMPRESIÓN 3D: Verde */
 #impresion3d {
     border-top: 5px solid #27ae60;
     background-color: rgba(39, 174, 96, 0.03); /* Un fondo verde muy sutil */
@@ -167,11 +235,6 @@ footer a {
     color: #27ae60;
 }
 
-/* === */
-
-/* =========================================
-   ESTILOS DEL FORMULARIO DE CONTACTO
-========================================= */
 
 #contacto {
     padding: 5rem 5%;

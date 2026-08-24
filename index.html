@@ -11,8 +11,11 @@
 
 <body>
     <header>
-        <div>
+        <!-- <div>
             Miguel Martinez Colombos - Diseño de Proyectos y Automatización
+        </div> -->
+        <div class="logo">
+            <img src="./media/logo.png" alt="Logo MACO Sistemas">
         </div>
         <nav>
             <a href="#inicio">Inicio</a>
@@ -25,13 +28,30 @@
 
     <main>
         <!-- presentacion -->
-        <section id="inicio" class="hero-section">
+        <!-- <section id="inicio" class="hero-section">
             <video autoplay loop muted playsinline class="video-fondo">
                 <source src="./media/robotito.mp4" type="video/mp4">
             </video>
             <div class="hero-texto">
                 <h1>Diseño de Proyectos</h1>
                 <p>Automatización, Robótica e Impresión 3D</p>
+            </div>
+        </section> -->
+
+        <section id="inicio" class="hero-section">
+
+            <video autoplay loop muted playsinline class="video-fondo">
+                <source src="./media/robotito.mp4" type="video/mp4">
+            </video>
+
+            <div class="video-overlay"></div>
+
+            <div class="hero-texto-izq">
+                <h1>DISEÑO<br>DE<br>PROYECTOS</h1>
+            </div>
+
+            <div class="hero-texto-der">
+                <h2>Automatización,<br>Robótica e<br>Impresión 3D</h2>
             </div>
         </section>
 
@@ -48,7 +68,7 @@
                     <img src="./media/termostato.jpg" alt="Prototipo de termostato con relés">
                 </article>
                 <article>
-                    <img src="./media/simulacion.jpg" alt="Simulación de sensores">
+                    <img src="./media/sensores.jpg" alt="Simulación de sensores">
                 </article>
                 <article>
                     <img src="./media/placa.jpg" alt="Placa ESP32 conectada">
@@ -92,7 +112,7 @@
         </section>
 
         <section id="contacto" class="contacto-section">
-            <h2>¿Tenés un proyecto? ¡Te ayudamos!</h2>
+            <h2>¿Tiene un proyecto en mente? ¡Lo ayudamos!</h2>
             <form>
                 <label for="nombre">Nombre</label>
                 <input type="text" id="nombre" name="nombre" required>
