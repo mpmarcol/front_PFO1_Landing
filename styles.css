@@ -134,3 +134,104 @@ footer a {
     transform: scale(1.05); 
 }
 
+/* === */
+
+/* =========================================
+   IDENTIDAD DE COLOR POR SECCIÓN
+========================================= */
+
+/* ARDUINO: Azul (Color Primario) */
+#arduino {
+    border-top: 5px solid #0056b3;
+    background-color: rgba(0, 86, 179, 0.03); /* Un fondo azul muy sutil */
+}
+#arduino h2 {
+    color: #0056b3; 
+}
+
+/* ROBÓTICA: Rojo (Color Primario) */
+#robotica {
+    border-top: 5px solid #c0392b;
+    background-color: rgba(192, 57, 43, 0.03); /* Un fondo rojo muy sutil */
+}
+#robotica h2 {
+    color: #c0392b;
+}
+
+/* IMPRESIÓN 3D: Verde (Color Secundario) */
+#impresion3d {
+    border-top: 5px solid #27ae60;
+    background-color: rgba(39, 174, 96, 0.03); /* Un fondo verde muy sutil */
+}
+#impresion3d h2 {
+    color: #27ae60;
+}
+
+/* === */
+
+/* =========================================
+   ESTILOS DEL FORMULARIO DE CONTACTO
+========================================= */
+
+#contacto {
+    padding: 5rem 5%;
+    max-width: 800px; /* Lo hacemos más angosto que el resto de la página */
+    margin: 0 auto;
+    text-align: center; /* Centra el título */
+}
+
+/* El contenedor del formulario usa Flexbox en columna */
+#contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Separación perfecta entre cada campo */
+    text-align: left; /* Volvemos a alinear el texto a la izquierda */
+    margin-top: 2rem;
+}
+
+/* Estilos de los textos indicativos (labels) */
+#contacto label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-texto);
+}
+
+/* Estilos de las cajas donde el usuario escribe */
+#contacto input, 
+#contacto textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Bordes suavemente redondeados */
+    font-family: inherit; /* Toma la fuente Montserrat que configuraste */
+    font-size: 1rem;
+}
+
+/* Efecto cuando haces clic en la caja para escribir */
+#contacto input:focus, 
+#contacto textarea:focus {
+    outline: none;
+    border-color: var(--color-dorado);
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.5); /* Un brillo dorado suave */
+}
+
+/* Estilo del botón de enviar */
+#contacto button {
+    background-color: var(--color-dorado);
+    color: white;
+    padding: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+/* Efecto del botón al pasar el mouse */
+#contacto button:hover {
+    background-color: #b5952f; /* Un dorado un poco más oscuro */
+}
+
