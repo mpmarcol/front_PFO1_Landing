@@ -1,0 +1,136 @@
+/* body {
+    /* parallax */
+    background-image: url('media/fondo.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: #0000ff;
+}
+
+section {
+    background-color: #ffffff;     
+    padding: 50px;     
+    margin-bottom: 20px; 
+} */
+
+/* INICIALIZACION */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Esto evita que los bordes rompan los tamaños de tus cajas */
+}
+
+/* COLORES */
+:root {
+    --color-dorado: #D4AF37;       /* Para header y footer */
+    --color-fondo: #FAFAFA;        /* Un blanco roto muy elegante */
+    --color-texto: #333333;        /* Gris oscuro, mejor que el negro puro para leer */
+    --color-acento: #C0392B;       /* Un rojo primario oscuro para detalles */
+}
+
+/* 3. CUERPO */
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    /* Tipografía sin serifas para lectura general (asegúrate de importarla de Google Fonts) */
+    font-family: 'Montserrat', sans-serif; 
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+/* HEADER */
+header {
+    background-color: var(--color-dorado);
+    color: white;
+    padding: 1.5rem 5%;
+    display: flex; /* Activamos Flexbox */
+    justify-content: space-between; /* Empuja el logo a la izquierda y el menú a la derecha */
+    align-items: center; /* Centra todo verticalmente */
+    position: sticky; /* Opcional: hace que el menú te persiga al bajar */
+    top: 0;
+    z-index: 100;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease; /* Transición suave exigida por PFO1 */
+}
+
+header a:hover {
+    color: var(--color-texto); /* Cambia al pasar el mouse */
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--color-dorado);
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column; /* Apila los elementos en columna */
+    align-items: center;
+    gap: 1rem;
+}
+
+footer a {
+    color: white;
+}
+
+/* secciones comunes */
+.editorial-section {
+    padding: 6rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.texto-introductorio {
+    text-align: left;
+    margin-bottom: 4rem; 
+    max-width: 800px;
+}
+
+.texto-introductorio h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.texto-introductorio .rol {
+    display: block;
+    font-size: 0.8rem;
+    color: #888;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+/* FOTOS */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.galeria-grid article {
+    overflow: hidden;
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.galeria-grid article:hover img {
+    transform: scale(1.05); 
+}
+

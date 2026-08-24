@@ -4,64 +4,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio | Diseñador de Proyectos Arduino</title>
+    <title>MACO Sistemas | Diseño de Proyectos de Automatización</title>
+
+    <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
     <header>
         <div>
-            Miguel Martinez Colombos - Diseñador de Proyectos
+            Miguel Martinez Colombos - Diseño de Proyectos y Automatización
         </div>
         <nav>
             <a href="#inicio">Inicio</a>
-            <a href="#proyectos">Mis Diseños</a>
+            <a href="#arduino">Arduino</a>
+            <a href="#robotica">Robótica</a>
+            <a href="#impresion3d">Impresión 3D</a>
             <a href="#contacto">Contacto</a>
         </nav>
     </header>
 
     <main>
-        <section id="inicio">
-            <video autoplay loop muted playsinline>
-                <source="video-arduino.mp4" type="video/mp4">
+        <!-- presentacion -->
+        <section id="inicio" class="hero-section">
+            <video autoplay loop muted playsinline class="video-fondo">
+                <source src="./media/robotito.mp4" type="video/mp4">
             </video>
-            <h1>
-                Diseño y Prototipado Electrónico
-            </h1>
-            <p>
-                De la simulación de circuitos a la implementación física.
-            </p>
+            <div class="hero-texto">
+                <h1>Diseño de Proyectos</h1>
+                <p>Automatización, Robótica e Impresión 3D</p>
+            </div>
         </section>
 
-        <section id="proyectos">
-            <h2>Proyectos Destacados</h2>
-
-            <article>
-                <h3>Sistema de Termostato Inteligente</h3>
-                <p>Control de temperatura con sensores y relés usando lógica en Python.</p>
-            </article>
-
-            <article>
-                <h3>Panel de Indicadores RGB</h3>
-                <p>Monitoreo visual de datos mediante secuencias LED.</p>
-            </article>
+        <!-- Seccion Arduino -->
+        <section id="arduino" class="editorial-section">
+            <div class="texto-introductorio">
+                <h2>Proyectos Arduino & ESP32</h2>
+                <span class="rol">DESARROLLO Y LÓGICA</span>
+                <p>Planificación y simulación de circuitos (Tinkercad).<br>Programación de microcontroladores y solución
+                    en placas.</p>
+            </div>
+            <div class="galeria-grid">
+                <article>
+                    <img src="./media/termostato.jpg" alt="Prototipo de termostato con relés">
+                </article>
+                <article>
+                    <img src="./media/simulacion.jpg" alt="Simulación de sensores">
+                </article>
+                <article>
+                    <img src="./media/placa.jpg" alt="Placa ESP32 conectada">
+                </article>
+                <article>
+                    <img src="./media/leds.jpg" alt="Panel de indicadores LED RGB">
+                </article>
+            </div>
         </section>
 
-        <section id="contacto">
-            <h2>Contactame</h2>
+        <section id="robotica" class="editorial-section">
+            <div class="texto-introductorio">
+                <h2>Robótica y Automatización</h2>
+                <span class="rol">ENSAMBLE Y CALIBRACIÓN</span>
+                <p>Diseño de mecanismos móviles, brazos robóticos y sistemas de respuesta automatizada mediante sensores
+                    de proximidad y motores servo.</p>
+            </div>
+            <div class="galeria-grid">
+                <article><img src="./media/robot1.jpg" alt="Brazo robótico"></article>
+                <article><img src="./media/robot2.jpg" alt="Mecanismo automatizado"></article>
+                <article><img src="./media/robot3.jpg" alt="Sensores"></article>
+                <article><img src="./media/robot4.jpg" alt="Motores"></article>
+            </div>
+        </section>
+
+        <section id="impresion3d" class="editorial-section">
+            <div class="texto-introductorio">
+                <h2>Servicio de Diseños e Impresiones 3D</h2>
+                <span class="rol">MODELADO Y MANUFACTURA ADITIVA</span>
+                <p>Creación de piezas funcionales, carcasas a medida para electrónica y prototipado rápido en diferentes
+                    filamentos.</p>
+            </div>
+
+            <div class="galeria-grid">
+                <!-- Aquí irían las imágenes de impresión 3D -->
+                <article><img src="./media/impresion1.jpg" alt="Pieza 3D en proceso"></article>
+                <article><img src="./media/impresion2.jpg" alt="Carcasa para Arduino"></article>
+                <article><img src="./media/impresion3.jpg" alt="Engranajes impresos"></article>
+                <article><img src="./media/impresion4.jpg" alt="Prototipo finalizado"></article>
+            </div>
+        </section>
+
+        <section id="contacto" class="contacto-section">
+            <h2>¿Tenés un proyecto? ¡Te ayudamos!</h2>
             <form>
-                <label for="nombre">Tu Nombre:</label>
-                <input type="text" id="nombre" required>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
 
-                <label for="mensaje">Tu Mensaje:</label>
-                <textarea id="mensaje" required></textarea>
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" required>
 
-                <button type="submit">Enviar Consulta</button>
+                <label for="mensaje">Detalles del proyecto</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                <button type="submit">Enviar</button>
             </form>
         </section>
     </main>
     <footer>
-        <p>Desarrollado para la PFO1 - 2026</p>
-        <a href="https://github.com/mpmarcol/front_PFO1_Landing" target="_blank">Visita mi repositorio en GitHub</a>
+        <div class="logo-footer">MACO Sistemas</div>
+        <p>DISEÑO, PROTOTIPADO Y AUTOMATIZACIÓN</p>
+        <a href="https://github.com/mpmarcol" target="_blank">Nuestro GitHub</a>
     </footer>
 </body>
 
