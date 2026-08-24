@@ -1,20 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap");
 
-body {
-  /* parallax */
-  background-image: url("media/fondo.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-color: #0000ff;
-}
-
 section {
   background-color: #ffffff;
   padding: 50px;
   margin-bottom: 20px;
 }
-*/
 
 /* INICIALIZACION */
 * {
@@ -30,23 +20,30 @@ section {
   --color-fondo: #fafafa; /* blanco */
   --color-texto: #333333; /* gris oscuro */
   --color-acento: #c0392b; /* rojo oscuro */
+  --traslucido: 0.75;
 }
 
 html {
   background-color: var(--color-dorado-claro);
 }
 
-/* 3. CUERPO */
 body {
   max-width: 1360px;
   margin: 0 auto;
 
+  /* parallax */
+  background-image: url("media/fondo.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   background-color: var(--color-fondo);
+
   color: var(--color-texto);
   font-family: "Montserrat", sans-serif;
   line-height: 1.6;
 
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+  overflow-x: hidden;
 }
 
 h1,
@@ -161,6 +158,8 @@ footer {
   margin: 0 auto;
 }
 
+/* === */
+
 .texto-introductorio {
   text-align: left;
   margin-bottom: 4rem;
@@ -172,24 +171,43 @@ footer {
   margin-bottom: 0.5rem;
 }
 
+.texto-introductorio h2,
+.texto-introductorio p {
+  font-weight: 700;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+}
+
 .texto-introductorio .rol {
   display: block;
-  font-size: 0.8rem;
-  color: #888;
+  font-size: 0.9rem;
+  color: #ffffff;
+  font-weight: 700;
   letter-spacing: 2px;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
 }
 
-/* fotos */
+/* === */
+
 .galeria-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
 .galeria-grid article {
-  overflow: hidden;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    /* border-radius: 8px; */
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transition: border-radius 0.5s ease-in-out; 
+}
+
+
+.galeria-grid article:hover {
+  border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 .galeria-grid img {
@@ -203,10 +221,12 @@ footer {
   transform: scale(1.05);
 }
 
+/* === */
+
 .hero-section {
   position: relative;
   width: 100%;
-  height: 596px;
+  height: 658px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -261,32 +281,39 @@ footer {
   color: var(--color-dorado);
 }
 
-/* ARDUINO: Azul */
+/* === */
+
 #arduino {
-  border-top: 5px solid #0056b3;
-  background-color: rgba(0, 86, 179, 0.03); /* Un fondo azul muy sutil */
-}
-#arduino h2 {
-  color: #0056b3;
+  border-top: 5px solid #66b2ff;
+  background-color: rgba(0, 86, 179, var(--traslucido));
 }
 
-/* ROBÓTICA: Rojo */
+#arduino h2,
+#arduino p {
+  color: #b3d9ff;  
+}  
+
 #robotica {
-  border-top: 5px solid #c0392b;
-  background-color: rgba(192, 57, 43, 0.03); /* Un fondo rojo muy sutil */
-}
-#robotica h2 {
-  color: #c0392b;
+  border-top: 5px solid #ff6666;  
+  background-color: rgba(192, 57, 43, var(--traslucido));
+}  
+
+#robotica h2,
+#robotica p {
+  color: #ffcccc;
 }
 
-/* IMPRESIÓN 3D: Verde */
 #impresion3d {
-  border-top: 5px solid #27ae60;
-  background-color: rgba(39, 174, 96, 0.03); /* Un fondo verde muy sutil */
+  border-top: 5px solid #2ecc71;
+  background-color: rgba(39, 174, 96, var(--traslucido));
 }
-#impresion3d h2 {
-  color: #27ae60;
+
+#impresion3d h2,
+#impresion3d p {
+  color: #c2f0c2;
 }
+
+/* === */
 
 #contacto {
   padding: 5rem 5%;
@@ -350,8 +377,7 @@ footer {
 
 #contacto h2 {
   font-size: 2.5rem;
-  font-family:
-    "Playfair Display", serif;
+  font-family: "Playfair Display", serif;
   margin-bottom: 2rem;
 }
 
