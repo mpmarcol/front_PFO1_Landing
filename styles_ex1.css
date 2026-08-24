@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap');
+
+/* body {
+    /* parallax */
+    background-image: url('media/fondo.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: #0000ff;
+}
+
+section {
+    background-color: #ffffff;     
+    padding: 50px;     
+    margin-bottom: 20px; 
+} */
+
+/* INICIALIZACION */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Esto evita que los bordes rompan los tamaños de tus cajas */
+}
+
+/* COLORES */
+:root {
+    --color-dorado: #D4AF37;       /* header, footer */
+    --color-dorado-claro: #FBDFA7; /* laterales */
+    --color-fondo: #FAFAFA;        /* blanco */
+    --color-texto: #333333;        /* gris oscuro */
+    --color-acento: #C0392B;       /* rojo oscuro */
+}
+
+html {
+    background-color: var(--color-dorado-claro);
+}
+
+/* 3. CUERPO */
+body {
+    max-width: 1360px;
+    margin: 0 auto;
+    
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: 'Montserrat', sans-serif; 
+    line-height: 1.6;
+    
+    box-shadow: 0 0 30px rgba(0,0,0,0.15);
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+/* HEADER */
+header {
+    background-color: var(--color-dorado);
+    color: white;
+    padding: 0.5rem 5%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+header .logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+header a:hover {
+    color: var(--color-dorado); 
+}
+
+header a:hover {
+    color: var(--color-texto);
+}
+
+/* FOOTER */
+footer {
+    /* background-color: var(--color-dorado);
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column; */
+    /* align-items: center;} */
+    /* gap: 1rem; */
+}
+
+/* footer a {
+    color: white;
+} */
+
+footer {
+    background-color: var(--color-dorado);
+    color: white;
+    padding: 3rem 5%;
+    
+    /* 3 columnas */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/* izquierda */
+.footer-logo img {
+    height: 80px; 
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); 
+}
+
+/* central */
+.footer-centro {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-info {
+    text-align: right;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-info p {
+    margin: 0;
+    font-weight: 500;
+}
+
+.footer-mapa iframe {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* 3. Columna Derecha (Redes Sociales) */
+.footer-redes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-redes a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.footer-redes a:hover {
+    color: #111111; 
+}
+
+/* secciones comunes */
+.editorial-section {
+    padding: 3rem 5% 6rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.texto-introductorio {
+    text-align: left;
+    margin-bottom: 4rem; 
+    max-width: 800px;
+}
+
+.texto-introductorio h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.texto-introductorio .rol {
+    display: block;
+    font-size: 0.8rem;
+    color: #888;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+/* FOTOS */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.galeria-grid article {
+    overflow: hidden;
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.galeria-grid article:hover img {
+    transform: scale(1.05); 
+}
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 596px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    padding-top: 50px;
+    overflow: hidden;
+    color: white;
+}
+
+.video-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.hero-texto-izq {
+    padding-left: 50px;
+    z-index: 3;
+}
+.hero-texto-der {
+    padding-right: 50px;
+    text-align: right;
+    z-index: 3;
+}
+.hero-texto-izq h1,
+.hero-texto-der h2 {
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    line-height: 1.1;
+}
+.hero-texto-izq h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.hero-texto-der h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--color-dorado);
+}
+
+/* ARDUINO: Azul */
+#arduino {
+    border-top: 5px solid #0056b3;
+    background-color: rgba(0, 86, 179, 0.03); /* Un fondo azul muy sutil */
+}
+#arduino h2 {
+    color: #0056b3; 
+}
+
+/* ROBÓTICA: Rojo */
+#robotica {
+    border-top: 5px solid #c0392b;
+    background-color: rgba(192, 57, 43, 0.03); /* Un fondo rojo muy sutil */
+}
+#robotica h2 {
+    color: #c0392b;
+}
+
+/* IMPRESIÓN 3D: Verde */
+#impresion3d {
+    border-top: 5px solid #27ae60;
+    background-color: rgba(39, 174, 96, 0.03); /* Un fondo verde muy sutil */
+}
+#impresion3d h2 {
+    color: #27ae60;
+}
+
+
+#contacto {
+    padding: 5rem 5%;
+    max-width: 800px; /* Lo hacemos más angosto que el resto de la página */
+    margin: 0 auto;
+    text-align: center; /* Centra el título */
+}
+
+/* El contenedor del formulario usa Flexbox en columna */
+#contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Separación perfecta entre cada campo */
+    text-align: left; /* Volvemos a alinear el texto a la izquierda */
+    margin-top: 2rem;
+}
+
+/* Estilos de los textos indicativos (labels) */
+#contacto label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-texto);
+}
+
+/* Estilos de las cajas donde el usuario escribe */
+#contacto input, 
+#contacto textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Bordes suavemente redondeados */
+    font-family: inherit; /* Toma la fuente Montserrat que configuraste */
+    font-size: 1rem;
+}
+
+/* Efecto cuando haces clic en la caja para escribir */
+#contacto input:focus, 
+#contacto textarea:focus {
+    outline: none;
+    border-color: var(--color-dorado);
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.5); /* Un brillo dorado suave */
+}
+
+/* Estilo del botón de enviar */
+#contacto button {
+    width: 40%;
+    background-color: var(--color-dorado);
+    color: white;
+    padding: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+    align-self: center; 
+    padding: 1.2rem 4rem;
+}
+
+/* Efecto del botón al pasar el mouse */
+#contacto button:hover {
+    background-color: #b5952f; /* Un dorado un poco más oscuro */
+}
+
+/* ============================= */
+
+/* 1. Ajuste del tamaño y fuente del título */
+#contacto h2 {
+    font-size: 2.5rem; /* Lo igualamos al tamaño de las otras secciones */
+    font-family: 'Playfair Display', serif; /* Recuperamos la tipografía elegante */
+    margin-bottom: 2rem; /* Separación con el formulario */
+}
+
+/* 2. Le quitamos el gap automático al contenedor */
+#contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* ¡CRÍTICO! Quitamos la separación general automática */
+    text-align: left; 
+    margin-top: 1rem;
+}
+
+/* 3. Acercamos el texto indicativo a su caja */
+#contacto label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-texto);
+    margin-bottom: 0.3rem; /* Separa el texto de la caja solo un poquito */
+}
+
+/* 4. Separamos las cajas entre sí */
+#contacto input, 
+#contacto textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    margin-bottom: 1.5rem; /* Da un buen respiro antes del siguiente campo */
+}
+
+/* 5. Aseguramos que el botón se vea bien despegado al final */
+#contacto button {
+    background-color: var(--color-dorado);
+    color: white;
+    padding: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    margin-top: 0.5rem;
+}
